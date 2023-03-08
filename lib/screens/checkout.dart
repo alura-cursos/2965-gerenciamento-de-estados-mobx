@@ -58,7 +58,7 @@ class Checkout extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           elevation: 0,
                           foregroundColor: Colors.white,
-                          backgroundColor: Color.fromARGB(255, 255, 83, 83)),
+                          backgroundColor: Theme.of(context).colorScheme.surfaceTint),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const <Widget>[
