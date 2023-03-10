@@ -9,19 +9,19 @@ part of 'carrinho_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$CarrinhoStore on _CarrinhoStore, Store {
-  late final _$quantidadeCarrinhoAtom =
-      Atom(name: '_CarrinhoStore.quantidadeCarrinho', context: context);
+  late final _$listaItemAtom =
+      Atom(name: '_CarrinhoStore.listaItem', context: context);
 
   @override
-  int get quantidadeCarrinho {
-    _$quantidadeCarrinhoAtom.reportRead();
-    return super.quantidadeCarrinho;
+  List<Item> get listaItem {
+    _$listaItemAtom.reportRead();
+    return super.listaItem;
   }
 
   @override
-  set quantidadeCarrinho(int value) {
-    _$quantidadeCarrinhoAtom.reportWrite(value, super.quantidadeCarrinho, () {
-      super.quantidadeCarrinho = value;
+  set listaItem(List<Item> value) {
+    _$listaItemAtom.reportWrite(value, super.listaItem, () {
+      super.listaItem = value;
     });
   }
 
@@ -29,22 +29,22 @@ mixin _$CarrinhoStore on _CarrinhoStore, Store {
       ActionController(name: '_CarrinhoStore', context: context);
 
   @override
-  void adicionaCarrinho() {
+  void adicionaCarrinho(Item item) {
     final _$actionInfo = _$_CarrinhoStoreActionController.startAction(
         name: '_CarrinhoStore.adicionaCarrinho');
     try {
-      return super.adicionaCarrinho();
+      return super.adicionaCarrinho(item);
     } finally {
       _$_CarrinhoStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void removeCarrinho() {
+  void removeCarrinho(Item item) {
     final _$actionInfo = _$_CarrinhoStoreActionController.startAction(
         name: '_CarrinhoStore.removeCarrinho');
     try {
-      return super.removeCarrinho();
+      return super.removeCarrinho(item);
     } finally {
       _$_CarrinhoStoreActionController.endAction(_$actionInfo);
     }
@@ -53,7 +53,7 @@ mixin _$CarrinhoStore on _CarrinhoStore, Store {
   @override
   String toString() {
     return '''
-quantidadeCarrinho: ${quantidadeCarrinho}
+listaItem: ${listaItem}
     ''';
   }
 }

@@ -3,11 +3,13 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:panucci_delivery/store/item_store.dart';
 import 'package:provider/provider.dart';
 
+import '../models/item.dart';
 import '../store/carrinho_store.dart';
 
 class Contador extends StatelessWidget {
-Contador({ Key? key }) : super(key: key);
+Contador({ Key? key, required this.item }) : super(key: key);
   final ItemStore itemStore = ItemStore();
+  final Item item;
 
   @override
   Widget build(BuildContext context){
@@ -21,7 +23,8 @@ Contador({ Key? key }) : super(key: key);
             onTap: () {
               if (itemStore.valorContador > 0) {
                 itemStore.removerItem();
-                carrinhoStore.removeCarrinho();
+                carrinhoStore.removeCarrinho(item);
+                print(carrinhoStore.listaItem.length);
               }
                 
             },
@@ -32,7 +35,7 @@ Contador({ Key? key }) : super(key: key);
             borderRadius: BorderRadius.circular(20),
             onTap: () {
               itemStore.adicionaItem();
-              carrinhoStore.adicionaCarrinho();
+              carrinhoStore.adicionaCarrinho(item);
             },
             child: const Icon(Icons.add_circle_outline, size: 20,),
           ),

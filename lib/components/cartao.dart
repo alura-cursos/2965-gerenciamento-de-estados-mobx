@@ -37,7 +37,7 @@ final Item item;
                     padding: EdgeInsets.only(bottom: 8.0),
                     child: Text("R\$ ${item.preco.toStringAsFixed(2)}"),
                   ),
-                  Contador(),
+                  Contador(item: item),
                 ],
               ),
             ),
