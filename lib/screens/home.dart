@@ -40,7 +40,8 @@ class Home extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Observer(
-                  builder: (_) => InkWell(
+                  builder: (_) => 
+                  !carrinhoStore.listaVazia ? InkWell(
                     onTap: () {
                 
                     },
@@ -98,7 +99,7 @@ class Home extends StatelessWidget {
                                 ),
                               ),
                             ])),
-                  ),
+                  ) : Container(),
                 ),
               ),
             )
