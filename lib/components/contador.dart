@@ -24,7 +24,6 @@ Contador({ Key? key, required this.item }) : super(key: key);
               if (itemStore.valorContador > 0) {
                 itemStore.removerItem();
                 carrinhoStore.removeCarrinho(item);
-                print(carrinhoStore.listaItem.length);
               }
                 
             },
