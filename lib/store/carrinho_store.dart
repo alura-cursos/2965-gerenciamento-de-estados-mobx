@@ -8,7 +8,7 @@ class CarrinhoStore = _CarrinhoStore with _$CarrinhoStore;
 
 abstract class _CarrinhoStore with Store {
   @observable
-  List<Item> listaItem = <Item>[];
+  List<Item> listaItem = ObservableList<Item>();
 
   @action
   void adicionaCarrinho(Item item) {
