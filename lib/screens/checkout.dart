@@ -3,8 +3,7 @@ import '../components/payment_method.dart';
 import '../components/payment_total.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({Key? key, required this.homeContext}) : super(key: key);
-  final BuildContext homeContext;
+  const Checkout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
