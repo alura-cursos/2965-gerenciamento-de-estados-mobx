@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:panucci_delivery/components/item_list.dart';
+import 'package:panucci_delivery/screens/checkout.dart';
 import 'package:panucci_delivery/store/carrinho_store.dart';
 import 'package:provider/provider.dart';
 import '../components/categoria_text.dart';
@@ -14,6 +15,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final carrinhoStore = Provider.of<CarrinhoStore>(context, listen: false);
+    final BuildContext homeContext = context;
     return SafeArea(
       child: Scaffold(
         body: CustomScrollView(
@@ -43,7 +45,9 @@ class Home extends StatelessWidget {
                   builder: (_) => 
                   !carrinhoStore.listaVazia ? InkWell(
                     onTap: () {
-                
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return Checkout(homeContext: homeContext);
+                      }));
                     },
                     child: Ink(
                         width: double.infinity,
