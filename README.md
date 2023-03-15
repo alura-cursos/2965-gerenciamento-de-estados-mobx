@@ -1,7 +1,6 @@
 
-![Descricao da sua imagem](https://raw.githubusercontent.com/andreocunha/upload_files_test/main/exemplo-thumb.png)
+![](https://user-images.githubusercontent.com/22684176/225420415-be1ce43e-7df2-43a2-b715-26e3bb3fc9f1.png)
 
-![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 # Flutter: Gerenciamento de estados com MobX
 
 ## Implemente o gerenciador de estados MobX em seus projetos
